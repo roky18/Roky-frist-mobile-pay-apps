@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay Mobile APPS</title>
+    <!-- daisy UI cdn-- -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cnd---- -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center"
+  >
+    <div
+      class="h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center"
+    >
+      <img src="./assets/Group.png" alt="" />
+    </div>
+    <legend class="bg-white rounded-3xl p-8">
+      <form>
+        <div class="mt-[16px]">
+          <label for="" class="font-bold">Mobile Number</label><br />
+          <input
+            id="MbNo"
+            type="text"
+            placeholder="Enter Your Number"
+            class="input bg-[#f4f5f7] h-[53px] w-[338px] rounded-4xl mt-[16px]"
+          />
+        </div>
+      </form>
+      <form>
+        <div class="mt-[16px]">
+          <label for="" class="font-bold">6 Digit Pin</label><br />
+          <input
+            id="PnNo"
+            type="text"
+            placeholder="Enter 6 Digit Pin"
+            class="input bg-[#f4f5f7] h-[53px] w-[338px] rounded-4xl mt-[16px]"
+          />
+        </div>
+      </form>
+      <br />
+      <!-- button -->
+      <button
+        class="btn bg-[#1A77F2] text-white border-[#005fd8] h-[53px] w-[338px] rounded-4xl mt-[16px]"
+        id="LoginBtn"
+      >
+        <span class="font-semibold text-lg">Login</span>
+      </button>
+    </legend>
+    <!-- js..script add// -->
+    <script src="./script.js"></script>
+  </body>
+</html>
