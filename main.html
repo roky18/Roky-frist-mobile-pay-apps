@@ -65,11 +65,17 @@
           <img class="mx-auto" src="./assets/send1.png" alt="" />
           <h1>CashOut</h1>
         </div>
-        <div class="text-center p-3 rounded-xl border-2 border-gray-300">
+        <div
+          id="Transfer-Btn"
+          class="text-center p-3 rounded-xl border-2 border-gray-300"
+        >
           <img class="mx-auto" src="./assets/money1.png" alt="" />
           <h1>Transfer Money</h1>
         </div>
-        <div class="text-center p-3 rounded-xl border-2 border-gray-300">
+        <div
+          id="Bonus"
+          class="text-center p-3 rounded-xl border-2 border-gray-300"
+        >
           <img class="mx-auto" src="./assets/bonus1.png" alt="" />
           <h1>Get Bonus</h1>
         </div>
@@ -85,7 +91,7 @@
     </main>
     <section class="all-form-section max-w-lg mx-auto">
       <!-- add money--->
-      <div id="addMoney">
+      <div id="addMoney" class="allSection">
         <h1 class="font-bold">Add Money</h1>
         <form action="" class="bg-white rounded-2xl p-8">
           <div>
@@ -98,6 +104,8 @@
               <option class="font-bold">DBBL Plc</option>
               <option class="font-bold">SONALI plc</option>
               <option class="font-bold">IBBL Plc</option>
+              <option class="font-bold">AGRANI Plc</option>
+              <option class="font-bold">CITY Plc</option>
             </select>
           </div>
           <div class="mt-4">
@@ -138,12 +146,9 @@
       </div>
 
       <!-- Cash Out---- -->
-      <div id="cashOut" style="display: none">
+      <div id="cashOut" class="allSection" style="display: none">
         <h1 class="font-bold">Cash Out</h1>
         <form action="" class="bg-white rounded-2xl p-8">
-          <div>
-            <h1 class="font-semibold">Select a Bank</h1>
-          </div>
           <div class="mt-4">
             <label for="" class="font-semibold">Agent Number</label><br />
             <input
@@ -176,6 +181,70 @@
             class="btn bg-[#1A77F2] text-white border-[#005fd8] rounded-3xl mt-8 w-full"
           >
             <span class="font-semibold text-lg">Withdraw Money</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- transfer Money-> -->
+      <div id="transMoney" class="allSection" style="display: none">
+        <h1 class="font-bold">Transfer Money</h1>
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div class="mt-4">
+            <label for="" class="font-semibold">User Account Number</label
+            ><br />
+            <input
+              id="AgentNbr"
+              type="text"
+              placeholder="Enter 11 digit number"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <div>
+            <label for="" class="font-semibold">Amount</label><br />
+            <input
+              id="withdraw-inp"
+              type="text"
+              placeholder="Enter Amount to withdraw"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <div>
+            <label for="" class="font-semibold">Pin Number</label><br />
+            <input
+              id="withdrawPin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <button
+            id="withdraw-Btn"
+            class="btn bg-[#1A77F2] text-white border-[#005fd8] rounded-3xl mt-8 w-full"
+          >
+            <span class="font-semibold text-lg">Send Now</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- bonus-= -->
+      <div id="bonusMny" class="allSection" style="display: none">
+        <h1 class="font-bold">Get Bonus</h1>
+        <form action="" class="bg-white rounded-2xl p-8">
+          <div class="mt-4">
+            <label for="" class="font-semibold">Enter Bonus Coupon</label><br />
+            <input
+              id="AgentNbr"
+              type="text"
+              placeholder="Enter your coupon"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+
+          <button
+            id="withdraw-Btn"
+            class="btn bg-[#1A77F2] text-white border-[#005fd8] rounded-3xl mt-8 w-full"
+          >
+            <span class="font-semibold text-lg">Get Bonus</span>
           </button>
         </form>
       </div>

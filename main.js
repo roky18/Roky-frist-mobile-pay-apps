@@ -49,11 +49,41 @@ document.getElementById("withdraw-Btn").addEventListener("click", function (e) {
   document.getElementById("ToAmount").innerText = newAvBalence;
 });
 // toggling feature---
+
 document.getElementById("addMoney-Btn").addEventListener("click", function () {
-  document.getElementById("cashOut").style.display = "none";
+  let allSections = document.getElementsByClassName("allSection");
+
+  for (let allSection of allSections) {
+    allSection.style.display = "none";
+  }
+
   document.getElementById("addMoney").style.display = "block";
 });
 document.getElementById("cashOut-Btn").addEventListener("click", function () {
-  document.getElementById("addMoney").style.display = "none";
+  let allSections = document.getElementsByClassName("allSection");
+
+  for (let allSection of allSections) {
+    allSection.style.display = "none";
+  }
+
   document.getElementById("cashOut").style.display = "block";
+});
+
+document.getElementById("Transfer-Btn").addEventListener("click", function () {
+  let allSections = document.getElementsByClassName("allSection");
+
+  for (let allSection of allSections) {
+    allSection.style.display = "none";
+  }
+
+  document.getElementById("transMoney").style.display = "block";
+});
+document.getElementById("Bonus").addEventListener("click", function () {
+  let allSections = document.getElementsByClassName("allSection");
+
+  for (let allSection of allSections) {
+    allSection.style.display = "none";
+  }
+
+  document.getElementById("bonusMny").style.display = "block";
 });
