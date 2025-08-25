@@ -1,4 +1,5 @@
 let ValidPin = 1234;
+let Transactions = [];
 
 // add Money Section--
 document.getElementById("AddMny").addEventListener("click", function (e) {
@@ -7,6 +8,10 @@ document.getElementById("AddMny").addEventListener("click", function (e) {
   let selectBank = document.getElementById("BankSl").value;
   let BankAccount = document.getElementById("BankAc").value;
   let BankAmount = parseInt(document.getElementById("Amount").value);
+  if (BankAmount <= 0) {
+    alert("Invalide,,,Eto kom Taka Add hoy na");
+    return;
+  }
   let Pin = parseInt(document.getElementById("Pin").value);
 
   let AvBlance = parseInt(document.getElementById("ToAmount").innerText);
@@ -25,6 +30,14 @@ document.getElementById("AddMny").addEventListener("click", function (e) {
   document.getElementById("ToAmount").innerText = NewBlance;
 
   console.log(AvBlance);
+
+  let deta = {
+    name: "Add money",
+    date: new Date().toLocaleTimeString(),
+  };
+  Transactions.push(deta);
+
+  console.log(Transactions);
 });
 
 // cash Out Section-
@@ -32,9 +45,15 @@ let wPin = 9090;
 document.getElementById("withdraw-Btn").addEventListener("click", function (e) {
   e.preventDefault();
   let withdraw = parseInt(document.getElementById("withdraw-inp").value);
+
   let AvlBlance = parseInt(document.getElementById("ToAmount").innerText);
   let AgentNumber = document.getElementById("AgentNbr").value;
   let withdraPin = parseInt(document.getElementById("withdrawPin").value);
+
+  if (withdraw <= 0 || withdraw > AvlBlance) {
+    alert("Invalide,,,Eto kom Taka cash out hoy na");
+    return;
+  }
 
   if (AgentNumber.length !== 11) {
     alert("Please Provide A Valide Acount Number");
@@ -47,6 +66,13 @@ document.getElementById("withdraw-Btn").addEventListener("click", function (e) {
 
   let newAvBalence = AvlBlance - withdraw;
   document.getElementById("ToAmount").innerText = newAvBalence;
+
+  let deta = {
+    name: "Cash Out",
+    date: new Date().toLocaleTimeString(),
+  };
+  Transactions.push(deta);
+  console.log(Transactions);
 });
 
 //function to toggle//
@@ -74,6 +100,33 @@ function handleBtn(id) {
     .getElementById(id)
     .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
 }
+
+// Transactions sec//
+
+document.getElementById("TrnBtn").addEventListener("click", function () {
+  let TransactionsContainer = document.getElementById("Transactions-container");
+  TransactionsContainer.innerText = "";
+  for (let deta of Transactions) {
+    let div = document.createElement("div");
+    div.innerHTML = `
+      <div
+            class="bg-white rounded-xl p-3 flex justify-between items-center mt-3"
+          >
+            <div class="flex items-center">
+              <div class="p-3 rounded-full bg-[#f4f5f7]">
+                <img src="./assets/wallet1.png" class="mx-auto" alt="" />
+              </div>
+              <div class="ml-3">
+                <h1>${deta.name}</h1>
+                <p>${deta.date}</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>`;
+
+    TransactionsContainer.appendChild(div);
+  }
+});
 // toggling feature---
 
 document.getElementById("addMoney-Btn").addEventListener("click", function () {
@@ -135,3 +188,9 @@ document.getElementById("TrnBtn").addEventListener("click", function () {
   handleToggle("Transactions");
   handleBtn("TrnBtn");
 });
+
+let logoutBtn = document
+  .getElementById("logOut")
+  .addEventListener("click", function () {
+    window.location.href = "./index.html";
+  });
